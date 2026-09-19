@@ -1,11 +1,101 @@
 :root {
-    --color-text: #EEEEEE;
-    --color-primary: #F02AB5;
-    --color-primary-translucent: rgba(240, 42, 181, 0.4);
-    --color-secondary: #20E86E;
-    --color-background: #090A2A;
-    --color-background-secondary: #28104e;
-    --color-translucent: rgba(255, 255, 255, 0.05);
-    --font-roboto:"Roboto"; 
-    --font-open-sans:"Open Sans", sans-serif;
+   /* =========================
+      COLORS
+      ========================= */
+
+   --color-text: #1A1A1A;
+   --color-text-muted: #6B6B6B;
+
+   --color-primary: #F02AB5;
+   --color-primary-hover: #D91FA2;
+   --color-primary-translucent: rgba(240, 42, 181, 0.15);
+
+   --color-secondary: #20E86E;
+
+   --color-background: #FFFFFF;
+   --color-background-secondary: #F7F4FA;
+
+   --color-white: #FFFFFF;
+   --color-black: #000000;
+
+   --color-border: #E5E5E5;
+   --color-translucent: rgba(0, 0, 0, 0.05);
+
+   --color-grid: rgba(217, 217, 249, 0.4);
+
+
+   /* =========================
+      FONTS
+      ========================= */
+
+   --font-body: "Open Sans", Arial, Helvetica, sans-serif;
+   --font-heading: "Cormorant Garamond", Georgia, serif;
+   --font-pixel: "Press Start 2P", cursive;
+   --font-roboto: "Roboto", sans-serif;
+   --font-open-sans: "Open Sans", Arial, Helvetica, sans-serif;
+
+   /* =========================
+      FONT SIZES
+      ========================= */
+
+   --text-xs: 0.75rem;
+   --text-sm: 0.85rem;
+   --text-base: 1rem;
+   --text-lg: 1.2rem;
+   --text-xl: 1.5rem;
+   --text-2xl: 2rem;
+   --text-3xl: 3rem;
+
+
+   /* =========================
+      FONT WEIGHTS
+      ========================= */
+
+   --weight-regular: 400;
+   --weight-medium: 500;
+   --weight-semibold: 600;
+   --weight-bold: 700;
+
+
+   /* =========================
+      SPACING
+      ========================= */
+
+   --space-xs: 0.25rem;
+   --space-sm: 0.5rem;
+   --space-md: 1rem;
+   --space-lg: 1.5rem;
+   --space-xl: 2rem;
+   --space-2xl: 4rem;
+
+
+   /* =========================
+      BORDERS
+      ========================= */
+
+   --border-width: 1px;
+
+   --radius-sm: 4px;
+   --radius-md: 6px;
+   --radius-lg: 12px;
+   --radius-pill: 999px;
+
+
+   /* =========================
+      EFFECTS
+      ========================= */
+
+   --transition-fast: 0.2s ease;
+   --transition-normal: 0.3s ease;
+
+   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+
+   /* =========================
+      LAYOUT
+      ========================= */
+
+   --navbar-height: 80px;
+   --section-scroll-margin: 80px;
 }
