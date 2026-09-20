@@ -1,94 +1,53 @@
-.aboutSection {
-    position: relative;
-    text-align: center;
-    z-index: 1;
-    padding: 60px 0;
+.section {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+  padding: 104px 0;
 }
 
-.aboutTitle {
-    position: relative;
-    font-size: 2rem;
-    font-weight: 400; 
-    line-height:1.6;
-    font-family: 'Press Start 2P', cursive; 
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    margin-bottom: 2rem;
-    z-index: 1;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.visible {
-    opacity: 1;
-    transform: translateY(0);
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 64px;
+  align-items: start;
 }
 
-.aboutContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 2rem; 
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--color-text);
-}
-.row {
-    width: 70%;
-    display: flex;
-    align-items: center;
-    gap: 2rem; 
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-
-    background: linear-gradient(
-        to right,
-        var(--color-background-secondary) 0%,
-        var(--color-translucent) 100%
-    );
-
-    color: white;
-    
+.title {
+  font-size: clamp(28px, 3.6vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 20px;
 }
 
-.rowIcon {
-    font-size: 1.8rem;
-    color: white;
-    flex-shrink: 0; 
+.inner p {
+  color: var(--muted);
+  margin-bottom: 16px;
 }
 
-.row p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.6;
-    font-family: var(--font-open-sans);
-    text-align:left;
+.quote {
+  background: var(--tint);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px;
 }
 
-.row:not(:last-child) {
-    border-bottom: none;
+.quote blockquote {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
 }
 
-@media (max-width: 480px) {
-    .aboutContent .row {
-        flex-direction: column;
-        text-align: center;
-    }
-    .aboutContent .row p {
-        flex-direction: column;
-        text-align: center;
-    }
-    .aboutTitle {
-        font-size: 1.3rem;
-    }
-
-    .rowIcon {
-        margin-bottom: 0.5rem;
-    }
+.quote figcaption {
+  font-size: 13px;
+  color: var(--muted);
 }
 
-:global(section#about) {
-    min-height: auto !important;
-    height: auto !important;
+@media (max-width: 820px) {
+  .section { padding: 68px 0; }
+  .inner { grid-template-columns: 1fr; gap: 32px; }
 }

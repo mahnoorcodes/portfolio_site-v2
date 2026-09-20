@@ -1,75 +1,89 @@
-import React, {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './navbar.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-export const Navbar = ({ onScrollTo, refs }) => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState('aboutRef');
+const links = [
+  { id: 'services', label: 'Services' },
+  { id: 'work', label: 'Work' },
+  { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' },
+];
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
+export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState('');
 
-    const handleNavClick = (scrollToRef, section) => {
-        onScrollTo(scrollToRef);
-        setActiveSection(section);
-        setMenuOpen(false);
-    };
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
-    useEffect(() => {
-        const sections = [
-            { key: 'aboutRef', ref: refs.aboutRef },
-            { key: 'experienceRef', ref: refs.experienceRef },
-            { key: 'skillsRef', ref: refs.skillsRef },
-            { key: 'projectsRef', ref: refs.projectsRef },
-            { key: 'cvRef', ref: refs.cvRef },
-            { key: 'contactRef', ref: refs.contactRef }
-        ];
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY + 200;
-            let currentSection = 'aboutRef';
-
-            sections.forEach(({ key, ref }) => {
-                if (ref?.current && scrollPosition >= ref.current.offsetTop) currentSection = key;
-            });
-
-            setActiveSection(currentSection);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
-
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [refs]);
-
-    return(
-        <>
-        <div
-            className={styles.navbarTitle}
-            onClick={() => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-                window.history.pushState("", document.title, window.location.pathname);
-                setActiveSection('aboutRef');
-                setMenuOpen(false);
-            }}
-        >
-            Mahnoor Faisal
-        </div>
-
-        <nav className={styles.navbar}>
-            <FontAwesomeIcon icon={faBars} className={styles.menuIcon} onClick={toggleMenu} alt="menu" />
-
-            <ul className={`${styles.navbarMenu} ${menuOpen ? styles.show : ''}`}>
-                <li className={activeSection === 'aboutRef' ? styles.active : ''} onClick={() => handleNavClick(refs.aboutRef, 'aboutRef')}>About</li>
-                <li className={activeSection === 'experienceRef' ? styles.active : ''} onClick={() => handleNavClick(refs.experienceRef, 'experienceRef')}>Experience</li>
-                <li className={activeSection === 'skillsRef' ? styles.active : ''} onClick={() => handleNavClick(refs.skillsRef, 'skillsRef')}>Skills</li>
-                <li className={activeSection === 'projectsRef' ? styles.active : ''} onClick={() => handleNavClick(refs.projectsRef, 'projectsRef')}>Projects</li>
-                <li className={activeSection === 'cvRef' ? styles.active : ''} onClick={() => handleNavClick(refs.cvRef, 'cvRef')}>Resume</li>
-                <li className={`${styles.contactButton} ${activeSection === 'contactRef' ? styles.contactActive : ''}`} onClick={() => handleNavClick(refs.contactRef, 'contactRef')}>Contact Me</li>
-            </ul>
-        </nav>
-        </>
+  // Highlight the link for the section currently in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
     );
+
+    links.forEach((link) => {
+      const el = document.getElementById(link.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const menuClass = menuOpen ? `${styles.menu} ${styles.show}` : styles.menu;
+
+  return (
+    <header className={styles.header}>
+      <div className={styles.nav}>
+        <a href="#top" className={styles.logo} onClick={closeMenu}>
+          Mahnoor Faisal
+        </a>
+
+        <nav aria-label="Main">
+          <ul className={menuClass}>
+            {links.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className={active === link.id ? styles.active : undefined}
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <a href="#contact" className={styles.hireBtn}>
+          Work with Me
+        </a>
+
+        <button
+          type="button"
+          className={styles.menuButton}
+          onClick={toggleMenu}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+        >
+          <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
+        </button>
+      </div>
+    </header>
+  );
 };
+
+export default Navbar;

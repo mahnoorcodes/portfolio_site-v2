@@ -1,29 +1,51 @@
-import React from 'react';
-import styles from './projects.module.css'
+import styles from './projects.module.css';
 
 export const ProjectsCard = ({
-    title, imageSrc, description, skills, githubLink,liveDemo
-}) => {
+    title,
+    pillar,
+    imageSrc,
+    tone = 'violet',
+    description,
+    skills = [],
+    githubLink,
+    liveDemo,
+    }) => {
     return (
-        <div className={styles.projectCard}>
-            <img src={`${import.meta.env.BASE_URL}${imageSrc}`} alt={title} className={styles.image} onError={(e) => {
-                e.target.onerror = null; 
-                e.target.src = `${import.meta.env.BASE_URL}images/default.png`; 
-            }}/>
+        <article className={styles.card}>
+        {/* Screenshot if you have one, otherwise a coloured placeholder */}
+        {imageSrc ? (
+            <img
+            src={`${import.meta.env.BASE_URL}${imageSrc}`}
+            alt={`${title} preview`}
+            className={styles.image}
+            loading="lazy"
+            />
+        ) : (
+            <div className={styles.placeholder} data-tone={tone} aria-hidden="true" />
+        )}
 
-            <div className={styles.cardContent}>
-                <h3 className={styles.projectsTitle}>{title}</h3>
-                <p className={styles.description}>{description}</p>
-                    <ul className={styles.skills}>
-                        {skills.map((skill, id) => (
-                            <li key={id} className={styles.skill}>{skill}</li>
-                        ))}
-                    </ul>
-                <div className={styles.links}>
-                    <a href={githubLink} className={styles.link} target="_blank" rel="noopener noreferrer">GitHub Link</a>
-                    <a href={liveDemo} className={styles.link} target="_blank" rel="noopener noreferrer">Live Link</a>
-                </div>
+        <div className={styles.content}>
+            <small className={styles.pillar}>{pillar}</small>
+            <h3 className={styles.projectTitle}>{title}</h3>
+            <p className={styles.description}>{description}</p>
+
+            <ul className={styles.skills}>
+            {skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+            ))}
+            </ul>
+
+            {(liveDemo || githubLink) && (
+            <div className={styles.links}>
+                {liveDemo && (
+                <a href={liveDemo} target="_blank" rel="noopener noreferrer">View live site</a>
+                )}
+                {githubLink && (
+                <a href={githubLink.trim()} target="_blank" rel="noopener noreferrer">View code</a>
+                )}
             </div>
+            )}
         </div>
+        </article>
     );
 };

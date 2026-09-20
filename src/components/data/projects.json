@@ -1,46 +1,42 @@
 [
-    {
-        "title": "ICE Ride - A US Based Ride-share  Website",
-        "imageSrc": "images/iceride.png",
-        "description": "ICERide.io is a ride-share website for the same name app that connects drivers with passengers looking for a convenient and affordable way to travel. The website is built using WordPress and Elementor, providing a user-friendly interface and seamless experience for both drivers and passengers.",
-        "skills": ["WordPress", "Elementor", "JavaScript", "PHP", "CSS"],
-        "liveDemo": "https://iceride.io/"
-    },
-    {
-        "title": "ICE Drop - A Sub-Service Website for ICE Ride",
-        "imageSrc": "images/icedrop.png",
-        "description": "ICEDrop.io is a sub-service website that complements ICE Ride. The website is built using WordPress and Elementor, providing a user-friendly interface and seamless experience for customers and delivery drivers.",
-        "skills": ["WordPress", "Elementor", "JavaScript", "PHP", "CSS"],
-        "liveDemo": "https://icedrop.io/"
-    },
-    {
-        "title": "SupportSpace - A Mental Health Support App",
-        "imageSrc": "images/supportspace.png",
-        "description": "SupportSpace is a mobile mental health support application designed to provide users with accessible and personalised emotional support through advanced technology. This application has multiple features ranging from a personal journal to a mood tracker. It leverages SQLite for offline storage and Google Firebase for secure backend services.",
-        "skills": ["React Native", "JavaScript", "HTML", "CSS", "Firebase", "SQLite", "ExpoGo"],
-        "githubLink": "https://github.com/mahnoorcodes/L6_supportspace_app",
-        "liveDemo": "https://expo.dev/preview/update?message=Initial%20release&updateRuntimeVersion=1.0.0&createdAt=2025-03-31T12%3A54%3A54.390Z&slug=exp&projectId=67cc986b-245f-46e0-9d12-cff225af8fce&group=71000740-10dc-41f5-932b-2cd1d1285931"
-    },
-    {
-        "title": "TaskMate - A Task Tracker App",
-        "imageSrc": "images/taskmate.png",
-        "description": "TaskMate is an Android mobile app where users can create, manage, and track their tasks efficiently. The app features a user-friendly interface and uses SQLite for local data storage.",
-        "skills": ["Java", "XML", "CSS", "SQLite"],
-        "githubLink": "https://github.com/mahnoorcodes/todoapp"
-    },
-    {
-        "title": "MarketNet - A WebApp for Managing Employee Details",
-        "imageSrc": "images/marketnet.jpg",
-        "description": "MarketNet is a webapp project for logging in and searching employee details in 2 departments. Only admins of Human Resources and Marketing (E001 and E002) can login and all details are stored in a MySQL database.",
-        "skills": ["C#", "ASP.NET", "HTML", "CSS", "SQL"],
-        "githubLink": "https://github.com/mahnoorcodes/marketnet-project"
-    },
-    {
-        "title": "My Portfolio Website",
-        "imageSrc": "images/portfolio.png",
-        "description": "This is my personal portfolio website, built using React and Vite. It showcases my projects, skills, and experience in a visually appealing manner.",
-        "skills": ["React", "Vite", "JavaScript", "HTML", "CSS"],
-        "githubLink": "https://github.com/mahnoorcodes/portfolio_site ",
-        "liveDemo": "https://portfolio-mahnoor-faisal.vercel.app/" 
-    }
+  {
+    "title": "ICE Ride",
+    "pillar": "Websites & WordPress",
+    "imageSrc": "images/iceride.png",
+    "tone": "violet",
+    "description": "Responsive WordPress and Elementor website for a US ride-share platform, with custom components and API-driven content.",
+    "skills": ["WordPress", "Elementor", "JavaScript", "PHP"],
+    "liveDemo": "https://iceride.io/"
+  },
+  {
+    "title": "ICE Drop",
+    "pillar": "Websites & WordPress",
+    "imageSrc": "images/icedrop.png",
+    "tone": "green",
+    "description": "Companion website for IceRide's delivery service, built to the same mobile-first standard.",
+    "skills": ["WordPress", "Elementor", "JavaScript", "CSS"],
+    "liveDemo": "https://icedrop.io/"
+  },
+  {
+    "title": "Corporate Divi websites",
+    "pillar": "Websites & WordPress",
+    "tone": "pink",
+    "description": "Large Divi 4 & 5 sites taken from 30–40 to 90+ performance scores, with a 100% Yoast SEO score.",
+    "skills": ["Divi", "Performance", "SEO"]
+  },
+  {
+    "title": "Internal CRM & AI quoting",
+    "pillar": "Zoho · AI · Full-stack",
+    "tone": "indigo",
+    "description": "Internal dashboard for lead capture, AI-generated quotes and customer tracking, synced two-way with Zoho CRM.",
+    "skills": ["React", "PHP", "Zoho CRM", "Claude API"]
+  },
+  {
+    "title": "SupportSpace",
+    "pillar": "Full-stack & mobile",
+    "tone": "green",
+    "description": "Mental-health support app with a journal and mood tracker, using SQLite for offline storage and Firebase for the backend.",
+    "skills": ["React Native", "Firebase", "SQLite"],
+    "githubLink": "https://github.com/mahnoorcodes/L6_supportspace_app"
+  }
 ]

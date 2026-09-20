@@ -1,37 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Sora:wght@400;500;600;700&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Outfit", Arial, Helvetica, sans-serif;
+:root {
+  --bg: #F8F6FF;
+  --surface: #FFFFFF;
+  --ink: #231A63;
+  --muted: #6B6591;
+  --line: #E4DEFA;
+  --tint: #F0ECFF;
+  --violet: #6C3FE0;
+  --pink: #E91FA6;
+  --pink-hover: #D1128F;
+  --green: #14B884;
+
+  --font-sans: "Sora", "Helvetica Neue", Arial, sans-serif;
+  --font-hand: "Caveat", "Segoe Script", "Bradley Hand", cursive;
+
+  --max-width: 1080px;
+  --nav-height: 68px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;    
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
 }
 
 body {
-    background-color: #ffffff;
-    background-attachment: fixed; 
-    
-    /* Lightened to a 40% opacity purple and scaled up to 60px grids */
-    background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(217, 217, 249, 0.4) 29px, rgba(217, 217, 249, 0.4) 30px, transparent 30px, transparent 59px, rgba(217, 217, 249, 0.4) 59px, rgba(217, 217, 249, 0.4) 60px), 
-        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(217, 217, 249, 0.4) 29px, rgba(217, 217, 249, 0.4) 30px, transparent 30px, transparent 59px, rgba(217, 217, 249, 0.4) 59px, rgba(217, 217, 249, 0.4) 60px), 
-        radial-gradient(circle at 30px 30px, rgba(217, 217, 249, 0.4) 1.6px, transparent 2.1px), 
-        radial-gradient(circle at 0px 0px, rgba(217, 217, 249, 0.4) 1.2px, transparent 1.7px), 
-        radial-gradient(circle at 60px 0px, rgba(217, 217, 249, 0.4) 1.2px, transparent 1.7px), 
-        radial-gradient(circle at 0px 60px, rgba(217, 217, 249, 0.4) 1.2px, transparent 1.7px), 
-        radial-gradient(circle at 60px 60px, rgba(217, 217, 249, 0.4) 1.2px, transparent 1.7px);
-    background-size: 60px 60px;
+  background-color: #ffffff;
+  background-attachment: fixed;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(217, 217, 249, 0.4) 29px, rgba(217, 217, 249, 0.4) 30px, transparent 30px, transparent 59px, rgba(217, 217, 249, 0.4) 59px, rgba(217, 217, 249, 0.4) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(217, 217, 249, 0.4) 29px, rgba(217, 217, 249, 0.4) 30px, transparent 30px, transparent 59px, rgba(217, 217, 249, 0.4) 59px, rgba(217, 217, 249, 0.4) 60px),
+    radial-gradient(circle at 30px 30px, rgba(217, 217, 249, 0.4) 1.6px, transparent 2.1px),
+    radial-gradient(circle at 0px 0px, rgba(217, 217, 249, 0.4) 1.2px, transparent 1.7px),
+    radial-gradient(circle at 60px 0px, rgba(217, 217, 249, 0.4) 1.2px, transparent 1.7px),
+    radial-gradient(circle at 0px 60px, rgba(217, 217, 249, 0.4) 1.2px, transparent 1.7px),
+    radial-gradient(circle at 60px 60px, rgba(217, 217, 249, 0.4) 1.2px, transparent 1.7px);
+  background-size: 60px 60px;
+
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-section {
-    scroll-margin-top: 80px;
-    min-height: 100vh;
-    width: 100%;
-    margin: 0;
-    background-color: transparent !important; 
-    background-image: none !important;
+ul { list-style: none; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
