@@ -54,7 +54,7 @@ export const Contact = () => {
     return (
         <>
         <section id="contact" className={styles.section}>
-            <div className={styles.cta}>
+        <div className={styles.cta} data-reveal="zoom">
             <div className={styles.intro}>
                 <h2>Have a project in mind?</h2>
                 <p>Tell me what you need. I’ll reply with next steps and a quote.</p>

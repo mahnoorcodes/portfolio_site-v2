@@ -4,7 +4,7 @@ export const About = () => {
     return (
         <section id="about" className={styles.section}>
         <div className={styles.inner}>
-            <div>
+        <div data-reveal="left">
             <h2 className={styles.title}>Hi, I’m Mahnoor</h2>
             <p>
                 I’m a web and full-stack developer with a BSc in Information Technology
@@ -20,7 +20,7 @@ export const About = () => {
             </p>
             </div>
 
-            <figure className={styles.quote}>
+            <figure className={styles.quote} data-reveal="right" style={{ '--reveal-delay': '150ms' }}>
             <blockquote>
                 “Highly professional, detail-oriented, and quick to understand requirements.
                 One of the most reliable developers I’ve worked with on Upwork.”

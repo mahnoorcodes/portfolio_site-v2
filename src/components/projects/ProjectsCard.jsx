@@ -9,9 +9,14 @@ export const ProjectsCard = ({
     skills = [],
     githubLink,
     liveDemo,
+    index = 0,
     }) => {
-    return (
-        <article className={styles.card}>
+        return (
+        <article
+            className={styles.card}
+            data-reveal
+            style={{ '--reveal-delay': `${(index % 3) * 120}ms` }}
+        >
         {/* Screenshot if you have one, otherwise a coloured placeholder */}
         {imageSrc ? (
             <img

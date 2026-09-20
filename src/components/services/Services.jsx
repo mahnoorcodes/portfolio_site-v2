@@ -51,14 +51,20 @@ const services = [
     return (
         <section id="services" className={styles.section}>
         <div className={styles.inner}>
-            <h2 className={styles.title}>How I can help</h2>
-            <p className={styles.sub}>
+            <h2 className={styles.title} data-reveal>How I can help</h2>
+            <p className={styles.sub} data-reveal style={{ '--reveal-delay': '100ms' }}>
             Four areas of work. Choose one, or combine them as your business grows.
             </p>
 
             <div className={styles.list}>
             {services.map((service, index) => (
-                <details key={service.name} className={styles.item} open={index === 0}>
+                <details
+                key={service.name}
+                className={styles.item}
+                open={index === 0}
+                data-reveal
+                style={{ '--reveal-delay': `${index * 120}ms` }}
+                >
                 <summary className={styles.summary}>
                     <span className={styles.name}>{service.name}</span>
                     <span className={styles.one}>{service.summary}</span>

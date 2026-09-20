@@ -172,6 +172,19 @@
   50% { transform: translateY(-3px); }
 }
 
+.hero > div:first-child {
+  animation: heroIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.proofWrap {
+  animation: heroIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both;
+}
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+
 @media (max-width: 820px) {
   .hero {
     grid-template-columns: 1fr;
