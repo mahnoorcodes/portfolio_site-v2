@@ -11,7 +11,6 @@
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 64px;
-  display:flex;
   align-items:center;
 }
 
@@ -50,5 +49,5 @@
 
 @media (max-width: 820px) {
   .section { padding: 68px 0; }
-  .inner { grid-template-columns: 1fr; gap: 32px; }
+  .inner { grid-template-columns: 1fr; gap: 32px;}
 }
