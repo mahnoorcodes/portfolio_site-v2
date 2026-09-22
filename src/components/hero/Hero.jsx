@@ -15,11 +15,6 @@ export const Hero = () => {
   return (
     <section id="top" className={styles.hero}>
       <div>
-        <div className={styles.status}>
-          <span className={styles.dot} />
-          Open to freelance projects
-        </div>
-
         <h1 className={styles.title}>
           I build websites, automations and AI systems that help businesses grow.
         </h1>
