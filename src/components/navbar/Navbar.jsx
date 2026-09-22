@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './navbar.module.css';
+import mahnoorfaisallogo from '../../assets/mahnoorfaisallogo.png';
 
 const links = [
   { id: 'services', label: 'Services' },
@@ -11,6 +12,7 @@ const links = [
 ];
 
 export const Navbar = () => {
+  const logo = { title: "mahnoorfaisal", image: mahnoorfaisallogo };
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState('');
 
@@ -48,9 +50,13 @@ export const Navbar = () => {
   return (
     <header className={styles.header}>
       <div className={styles.nav}>
-        <a href="#top" className={styles.logo} onClick={closeMenu}>
-          Mahnoor Faisal
-        </a>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#top" onClick={closeMenu}>
+            <img src={logo.image} alt={logo.title} width="" height="40"/> 
+          </a>
+        </div>
+      </nav>
 
         <nav aria-label="Main">
           <ul className={menuClass}>

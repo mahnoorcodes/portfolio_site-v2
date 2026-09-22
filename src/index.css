@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Sora:wght@400;500;600;700&display=swap');
+@import url('https://googleapis.com');
 
 :root {
   --bg: #F8F6FF;
@@ -13,7 +13,7 @@
   --green: #14B884;
 
   --font-sans: "Sora", "Helvetica Neue", Arial, sans-serif;
-  --font-hand: "Caveat", "Segoe Script", "Bradley Hand", cursive;
+  --font-hand: "Alex Brush", "Segoe Script", cursive;
 
   --max-width: 1080px;
   --nav-height: 68px;

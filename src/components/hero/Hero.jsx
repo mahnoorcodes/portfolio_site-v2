@@ -32,7 +32,7 @@ export const Hero = () => {
         <div className={styles.actions}>
           <a href="#services" className={styles.primary}>View services</a>
           <a href={UPWORK_URL} target="_blank" rel="noopener noreferrer" className={styles.ghost}>
-            Hire me on Upwork
+            Work with me on Upwork
           </a>
         </div>
       </div>
