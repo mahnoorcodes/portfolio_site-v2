@@ -6,6 +6,7 @@ import { Services } from './components/services/Services.jsx';
 import { Projects } from './components/projects/Projects.jsx';
 import { About } from './components/about/About.jsx';
 import { Contact } from './components/contact/Contact.jsx';
+import {Skills } from './components/skills/Skills.jsx';
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
         <Hero />
         <Services />
         <Projects />
+        <Skills />
         <About />
         <Contact />
       </main>

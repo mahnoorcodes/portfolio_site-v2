@@ -1,127 +1,143 @@
-import React, { useRef, useEffect } from 'react';
-import styles from './skills.module.css'
-import techstack from "../data/techstack.json";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import gamedesigncert from '../../assets/gamedesigncert.jpg';
-import creativewritingcert from '../../assets/creativewritingcert.jpg';
-import onemillcert from '../../assets/onemillcert.jpg';
-import pythcert from '../../assets/pythcert.jpg';
-import figmacert from '../../assets/figmacert.jpg'
-import webdescert from '../../assets/webdescert.jpg'
-import jscert from '../../assets/jscert.jpg'
+import React, { useEffect, useRef } from "react";
+import styles from "./skills.module.css";
 
-const certificates = [
-    {
-        title: "Introduction to Game Design",
-        date: "Issued Mar 2021",
-        image: gamedesigncert
-    },
-    {
-        title: "Creative Writing: The Craft of Plot",
-        date: "Issued Mar 2021",
-        image: creativewritingcert
-    },
-    {
-        title: "1 Million Prompters",
-        date:"Issued Jan 2025",
-        image: onemillcert
-    },
-    {
-        title: "Learning Python",
-        date:"Issued Apr  2025",
-        image: pythcert
-    },
-    {
-        title: "Figma for UX Design ",
-        date:"Issued May  2025",
-        image: figmacert
-    },
-    {
-        title: "Introduction to Web Design and Development",
-        date:"Issued Jan 2026",
-        image: webdescert
-    },
-    {
-        title: "Hands-On introduction to JavaScript",
-        date:"Issued Jan 2026",
-        image: jscert
-    }
-];
-const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    
-    autoplay: true,       
-    autoplaySpeed: 2500,   
-
-    pauseOnHover: true,   
-    pauseOnFocus: true,  
-    
-    responsive: [
-        {
-        breakpoint: 768,
-        settings: {
-            slidesToShow: 1,
-        },
-        },
+const skillGroups = [
+  {
+    number: "01",
+    title: "Frontend",
+    items: [
+      "JavaScript",
+      "React",
+      "Vite",
+      "React Native",
+      "HTML5",
+      "CSS3",
+      "Responsive Design",
+      "UI/UX Implementation",
     ],
-};
+  },
+  {
+    number: "02",
+    title: "WordPress",
+    items: [
+      "WordPress",
+      "Elementor",
+      "Divi 4 & 5",
+      "Custom Components",
+      "Yoast SEO",
+      "Performance Optimization",
+    ],
+  },
+  {
+    number: "03",
+    title: "Full-stack",
+    items: [
+      "PHP",
+      "C#",
+      "ASP.NET",
+      "SQL",
+      "REST APIs",
+      "Authentication",
+      "RBAC",
+      "Async Job Queues",
+    ],
+  },
+  {
+    number: "04",
+    title: "AI & Automation",
+    items: [
+      "Claude API",
+      "OpenAI API",
+      "AI Chatbots",
+      "RAG",
+      "Zoho CRM",
+      "Zoho Flow",
+      "Zoho SalesIQ",
+    ],
+  },
+  {
+    number: "05",
+    title: "Integrations",
+    items: [
+      "WhatsApp Business API",
+      "Google Sheets API",
+      "Google Drive API",
+      "3CX",
+      "SMTP",
+      "Zoho COQL",
+    ],
+  },
+  {
+    number: "06",
+    title: "Tools & Platforms",
+    items: [
+      "Git",
+      "GitHub",
+      "GitHub Actions",
+      "Docker",
+      "Figma",
+      "Vercel",
+      "Hostinger",
+      "Android Studio",
+    ],
+  },
+];
 
 export const Skills = () => {
-    const skillsTitleRef = useRef(null);
-    const certTitleRef = useRef(null);
-    
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add(styles.visible);
-                observer.unobserve(entry.target);
-            }
-            });
-        },
-        { threshold: 0.2 }
-        );
-    
-        if (skillsTitleRef.current) observer.observe(skillsTitleRef.current);
-        if (certTitleRef.current) observer.observe(certTitleRef.current);
-        }, []);
-    
-return (
-    <section id="skills" className={styles.skillsSection}>
-        <h1 ref={skillsTitleRef} className={styles.title}>SKILLS + TECH STACK</h1>
-        <div className={styles.techstackBoxes}>
-            {Object.entries(techstack).map(([category, items]) => (
-            <div key={category} className={styles.categoryBox}>
-                <h2 className={styles.categoryTitle}>{category.replaceAll("_", " ")}</h2>
-                <div className={styles.stackItems}>
-                {items.map((item, index) => (
-                    <div key={index} className={styles.techItem}>
-                    {item.title}
-                    </div>
-                ))}
-                </div>
-            </div>
-            ))}
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add(styles.visible);
+          observer.unobserve(section);
+        }
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="skills" ref={sectionRef} className={styles.skillsSection}>
+      <div className={styles.inner}>
+        <div className={styles.sectionIntro}>
+          <h1 className={styles.title}>Technical Stack</h1>
+          <p className={styles.subtitle}>
+            The technologies and platforms I use to build websites,
+            applications, automations, and business systems.
+          </p>
         </div>
 
-        <div className={styles.certificateSection}>
-            <h1 ref={certTitleRef} className={styles.title}>CERTIFICATIONS</h1>
-            <Slider {...sliderSettings}>
-                {certificates.map((cert, index) => (
-                <div key={index} className={styles.card}>
-                    <img src={cert.image} alt={cert.certTitle} className={styles.image} />
-                    <p className={styles.certText}>{cert.title}<br/>{cert.date}</p>
-                </div>
+        <div className={styles.skillsGrid}>
+          {skillGroups.map((group) => (
+            <div key={group.title} className={styles.skillGroup}>
+              <div className={styles.groupHeader}>
+                <span className={styles.number}>{group.number}</span>
+                <h2>{group.title}</h2>
+              </div>
+
+              <div className={styles.skills}>
+                {group.items.map((skill) => (
+                  <span key={skill} className={styles.skill}>
+                    {skill}
+                  </span>
                 ))}
-            </Slider>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
     </section>
-);
+  );
 };
+
+export default Skills;
