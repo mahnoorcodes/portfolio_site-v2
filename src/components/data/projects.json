@@ -30,5 +30,23 @@
     "description": "Built a React Native mobile application with journaling and mood-tracking features, using SQLite for local offline storage and Firebase for backend data and authentication.",
     "skills": ["React Native", "JavaScript","Firebase", "SQLite", "Mobile UI/ UX"],
     "githubLink": "https://github.com/mahnoorcodes/L6_supportspace_app"
+  },
+  {
+    "title": "TaskMate",
+    "pillar": "Mobile & Android",
+    "imageSrc": "images/taskmate.png",
+    "tone": "violet",
+    "description": "Developed an Android task-management app with Java and SQLite, providing users with a simple interface for creating, managing, and persistently storing tasks locally.",
+    "skills": ["Java", "Android Studio", "SQLite", "Mobile Development"],
+    "githubLink": "https://github.com/mahnoorcodes/todoapp"
+  },
+  {
+    "title": "MarketNet",
+    "pillar": "Full-stack Development",
+    "imageSrc": "images/marketnet.png",
+    "tone": "pink",
+    "description": "Built a full-stack market network management system using C# and ASP.NET, with MSSQL for structured relational data and backend application management.",
+    "skills": ["C#", "ASP.NET", "MSSQL", "Full-stack Development"],
+    "githubLink": "https://github.com/mahnoorcodes/marketnet-project"
   }
 ]
