@@ -1,42 +1,34 @@
 [
   {
-    "title": "ICE Ride",
+    "title": "Oak Ride & Oak Drop",
     "pillar": "Websites & WordPress",
-    "imageSrc": "images/iceride.png",
+    "imageSrc": "images/oakride.png",
     "tone": "violet",
-    "description": "Responsive WordPress and Elementor website for a US ride-share platform, with custom components and API-driven content.",
-    "skills": ["WordPress", "Elementor", "JavaScript", "PHP"],
-    "liveDemo": "https://iceride.io/"
-  },
-  {
-    "title": "ICE Drop",
-    "pillar": "Websites & WordPress",
-    "imageSrc": "images/icedrop.png",
-    "tone": "green",
-    "description": "Companion website for IceRide's delivery service, built to the same mobile-first standard.",
-    "skills": ["WordPress", "Elementor", "JavaScript", "CSS"],
-    "liveDemo": "https://icedrop.io/"
+    "description": "Designed and developed responsive WordPress and Elementor websites for a US-based ride-share and delivery platform, building custom sections, responsive layouts, and user-focused interfaces across desktop, tablet, and mobile.",
+    "skills": ["WordPress", "Elementor", "Responsive Design", "JavaScript", "CSS"],
+    "liveDemo": "https://oakrides.com/"
   },
   {
     "title": "Corporate Divi websites",
     "pillar": "Websites & WordPress",
     "tone": "pink",
-    "description": "Large Divi 4 & 5 sites taken from 30–40 to 90+ performance scores, with a 100% Yoast SEO score.",
-    "skills": ["Divi", "Performance", "SEO"]
+    "description": "Optimized large-scale Divi 4 & 5 websites from 30–40 to 90+ performance scores, while improving responsive layouts, frontend functionality, site speed, and Yoast SEO to 100%.",
+    "skills": ["Divi 4 & 5", "WordPress" , "Performance", "SEO" , "Responsive Design"]
   },
   {
     "title": "Internal CRM & AI quoting",
-    "pillar": "Zoho · AI · Full-stack",
+    "pillar": "Full-stack · Zoho · AI",
     "tone": "indigo",
-    "description": "Internal dashboard for lead capture, AI-generated quotes and customer tracking, synced two-way with Zoho CRM.",
-    "skills": ["React", "PHP", "Zoho CRM", "Claude API"]
+    "description": "Built a full-stack React/PHP CRM and AI-powered quoting system that automates lead capture, quotation generation, document handling, and customer communication, with bidirectional Zoho CRM synchronization and Claude API integration.",
+    "skills": ["React", "PHP", "Zoho CRM", "Claude API" , "API Integration"]
   },
   {
     "title": "SupportSpace",
     "pillar": "Full-stack & mobile",
+    "imageSrc": "images/supportspace.png",
     "tone": "green",
-    "description": "Mental-health support app with a journal and mood tracker, using SQLite for offline storage and Firebase for the backend.",
-    "skills": ["React Native", "Firebase", "SQLite"],
+    "description": "Built a React Native mobile application with journaling and mood-tracking features, using SQLite for local offline storage and Firebase for backend data and authentication.",
+    "skills": ["React Native", "JavaScript","Firebase", "SQLite", "Mobile UI/ UX"],
     "githubLink": "https://github.com/mahnoorcodes/L6_supportspace_app"
   }
 ]
