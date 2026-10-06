@@ -43,7 +43,7 @@
   {
     "title": "MarketNet",
     "pillar": "Full-stack Development",
-    "imageSrc": "images/marketnet.png",
+    "imageSrc": "images/marketnet.jpg",
     "tone": "pink",
     "description": "Built a full-stack market network management system using C# and ASP.NET, with MSSQL for structured relational data and backend application management.",
     "skills": ["C#", "ASP.NET", "MSSQL", "Full-stack Development"],
